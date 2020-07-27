@@ -50,10 +50,65 @@ function addItem(){
 
     
 }
-
-
-
-
-
+//adds the new to-do item to the list
 addButton.onclick = addItem;
-//deleteButton.onclick = deleteItem;
+
+
+//alarm clock stuff - Web Animations API
+const myAnimation = document.getElementById("hands").animate(
+    [
+        {
+            transform: 'rotate(0) ',
+        },
+        {
+            transform: 'rotate(360deg) ',
+        },
+    ],
+    {
+        duration: 3000,
+        iterations: Infinity,
+    }
+);
+
+//third-party api - OpenWeatherMap API
+// used https://bithacker.dev/fetch-weather-openweathermap-api-javascript as a resource for how to use the API
+
+
+let cityInput = document.getElementById('city-input');
+let weatherButton = document.getElementById('city-button');
+
+//function that runs when we click the "Get Weather" button
+function getWeather(){
+    //gets the text value from the input
+    let city = cityInput.value;
+
+//function that gets the weather with our api key and city
+//then displays it
+function weatherBalloon(city) {
+    var key = 'c715c9b3ebc21f403deb09b10da2d3be';
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key)  
+    .then(function(resp) { return resp.json() }) 
+    .then(function(data) {
+      drawWeather(data);
+    })
+    .catch(function() {
+      // catch any errors
+    });
+  }
+  
+  
+    
+    weatherBalloon(city);
+}
+  
+  weatherButton.onclick = getWeather;
+  
+  //formats and displays all the weather information
+  function drawWeather( d ) {
+	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+	
+	document.getElementById('description').innerHTML = d.weather[0].description;
+	document.getElementById('temp').innerHTML = celcius + '&deg;';
+	document.getElementById('location').innerHTML = d.name;
+}

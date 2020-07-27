@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <script src="main.js" async ></script>
+        
     </head>
     <body>
         <div class="mainDiv">
@@ -19,6 +20,17 @@
 
                 </ul>
             </div>
+            <div class="img-parent">
+                <img class="clock-face" src="img/clock-face.png" alt="alarm clock" width="200">
+                <img class="clock-hands" id="hands" src="img/clock-hands.png" alt="alarm clock" width="200">
+            </div>
+            <div id="weather">
+                <input type="text" id="city-input" value="City Name"><button id="city-button">Get Weather</button>
+                <div id="description"></div>
+                <h1 id="temp"></h1>
+                
+            </div>
         </div>
+       
     </body>
 </html>

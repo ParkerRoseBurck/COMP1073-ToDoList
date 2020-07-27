@@ -4,24 +4,26 @@ html{
 
 h1{
     text-align:center;
+    width: 50%;
 }
 body{
     height:90%;
     font-family: 'Montserrat', sans-serif;
 }
 div.mainDiv{
-    width:70%;
+    width:90%;
     height:100%;
-    margin-left:15%;
+    margin-left:5%;
         
 }
 div.list{
     background-color: #260943;
     border-radius: 20px;
-    width:70%;
-    margin-left:15%;
+    width:45%;
+    margin-right:5%;
     overflow: hidden;
     min-height: 50%;
+    float:left;
 }
 #newInput{
     margin-left:35%;
@@ -59,4 +61,33 @@ li p{
     float: left;
 }
 
+.img-parent{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 5%;
+    float:right;
+    width: 20%;
+}
 
+.clock-face{
+    position:relative;
+    top:0;
+    left:0;
+
+}
+.clock-hands{
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+#weather{
+    width:30%;
+    float: right;
+    
+}
+
+#description{
+    padding-top: 5%;
+}
