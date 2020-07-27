@@ -110,5 +110,5 @@ function weatherBalloon(city) {
 	
 	document.getElementById('description').innerHTML = d.weather[0].description;
 	document.getElementById('temp').innerHTML = celcius + '&deg;';
-	document.getElementById('location').innerHTML = d.name;
+	document.getElementById('location').innerHTML =d.name;
 }
